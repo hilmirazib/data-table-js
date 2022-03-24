@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <table>
+            <thead>
+                <tr>
+                    <th @click="sort('name')">Name</th>
+                    <th @click="sort('age')">Age</th>
+                    <th @click="sort('breed')">Breed</th>
+                    <th @click="sort('gender')">Gender</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="cat in sortedCats">
+                    <td>{{cat.name}}</td>
+                    <td>{{cat.age}}</td>
+                    <td>{{cat.breed}}</td>
+                    <td>{{cat.gender}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>
+            <button @click="prevPage">Previous</button>
+            <button @click="nextPage">Next</button>
+        </p>
+
+        debug: sort={{currentSort}}, dir={{currentSortDir}}, page={{currentPage}}
+    </div>
+    <script src="https://unpkg.com/vue@2.6.14/dist/vue.js"></script>
+    <script src="appVue.js"></script>
+</body>
+
+</html>
